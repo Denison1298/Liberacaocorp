@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Script Liberação</title>
+    <link rel="icon" href="src/img/icon.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #F4F4F4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .login-container img {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #dadf3f;
+            box-shadow: inset 0 0 6px rgba(218, 223, 63, 0.5), 0 0 10px rgba(218, 223, 63, 0.7);
+            outline: none;
+        }
+
+        button {
+            background: linear-gradient(135deg, #dadf3f 0%, #c0ca33 100%);
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            color: #1e3c72;
+            border-radius: 25px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+            font-weight: 600;
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 15px 30px rgba(192, 202, 51, 0.5);
+            background: linear-gradient(135deg, #c0ca33 0%, #dadf3f 100%);
+        }
+
+        .forgot-password {
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .forgot-password a {
+            color: #dadf3f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="src/img/Logo.png" alt="Logo">
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="forgot-password">
+            <p>Esqueceu sua senha? <a href="#">Fale com o setor corporativo! :)</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio do formulário
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Dados dos usuários
+            var users = {
+                'Denison': '010203',
+                'Gabriel': '010203'
+            };
+
+            if (users[username] && users[username] === password) {
+                // Redireciona para a página index.html após autenticação
+                window.location.href = 'index.html';
+            } else {
+                alert('Usuário ou senha incorretos');
+            }
+        });
+    </script>
+</body>
+</html>

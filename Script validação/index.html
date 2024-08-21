@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script de Atendimentos Liberação Técnica Corporativa</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="src/img/Logo.png" alt="Logo DigitalNet" class="logo">
+        <h1>Script de Atendimentos Liberação Técnica Corporativa</h1>
+        <div class="container">
+            <button onclick="showSection('interno')">Interno</button>
+            <button onclick="showSection('externo')">Externo</button>
+            <button onclick="showSection('remocao')">Remoção</button>
+        </div>
+    </header>
+    <div id="interno" class="label-container active">
+        <div class="label-group">
+            <div class="label-item">
+                <label>Protocolo:</label>
+                <input type="text" name="protocolo">
+            </div>
+            <div class="label-item">
+                <label>Instalação e Lacre ONU:</label>
+                <input type="text" name="instalacao_lacre" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Acesso ao Roteador:</label>
+                <input type="text" name="acesso_roteador" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Teste:</label>
+                <input type="text" name="teste" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Usuário:</label>
+                <input type="text" name="usuario" autocomplete="off">
+            </div>
+            <div class="label-item">
+                <label>Senha:</label>
+                <input type="text" name="senha" value="@1D_">
+            </div>
+            <div class="label-item">
+                <label>Sinal - Conector Interno:</label>
+                <input type="text" name="sinal_conector_interno" value="-" data-type="signal">
+            </div>
+            <div class="label-item">
+                <label>Sinal - ONU:</label>
+                <input type="text" name="sinal_onu">
+            </div>
+            <div class="label-item">
+                <label>Equipamentos:</label>
+                <input type="text" name="equipamentos" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Pat. ONU:</label>
+                <input type="text" name="pat_onu">
+            </div>
+            <div class="label-item">
+                <label>Pat. Roteador:</label>
+                <input type="text" name="pat_roteador">
+            </div>
+            <div class="label-item">
+                <label>Pat. Repetidor:</label>
+                <input type="text" name="pat_repetidor">
+            </div>
+            <div class="label-item">
+                <label>Pat. Equipamento retirado:</label>
+                <input type="text" name="pat_equipamento_retirado">
+            </div>
+        </div>
+    </div>
+    <div id="externo" class="label-container">
+        <div class="label-group">
+            <div class="label-item">
+                <label>Protocolo:</label>
+                <input type="text" name="protocolo">
+            </div>
+            <div class="label-item">
+                <label>Instalação e Lacre ONU:</label>
+                <input type="text" name="instalacao_lacre" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Documentação GEOGRID:</label>
+                <input type="text" name="documentacao" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Identificação CTO:</label>
+                <input type="text" name="cto">
+            </div>
+            <div class="label-item">
+                <label>Porta:</label>
+                <input type="text" name="porta">
+            </div>
+            <div class="label-item">
+                <label>Acesso ao Roteador:</label>
+                <input type="text" name="acesso_roteador" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Usuário:</label>
+                <input type="text" name="usuario" autocomplete="off">
+            </div>
+            <div class="label-item">
+                <label>Senha:</label>
+                <input type="text" name="senha" value="@1D_">
+            </div>
+            <div class="label-item">
+                <label>Sinal - Conector Externo:</label>
+                <input type="text" name="sinal_conector_externo" value="-" data-type="signal">
+            </div>
+            <div class="label-item">
+                <label>Sinal - Conector Interno:</label>
+                <input type="text" name="sinal_conector_interno" value="-" data-type="signal">
+            </div>
+            <div class="label-item">
+                <label>Sinal - ONU:</label>
+                <input type="text" name="sinal_onu">
+            </div>
+            <div class="label-item">
+                <label>Equipamentos:</label>
+                <input type="text" name="equipamentos" value="OK">
+            </div>
+            <div class="label-item">
+                <label>Pat. ONU:</label>
+                <input type="text" name="pat_onu">
+            </div>
+            <div class="label-item">
+                <label>Pat. Roteador:</label>
+                <input type="text" name="pat_roteador">
+            </div>
+            <div class="label-item">
+                <label>Pat. Repetidor:</label>
+                <input type="text" name="pat_repetidor">
+            </div>
+            <div class="label-item">
+                <label>Pat. Equipamento retirado:</label>
+                <input type="text" name="pat_equipamento_retirado">
+            </div>
+            <div class="label-item">
+                <label>Teste:</label>
+                <input type="text" name="teste" value="OK">
+            </div>
+        </div>
+    </div>
+    <div id="remocao" class="label-container">
+        <div class="label-group">
+            <div class="label-item">
+                <label>Código Cliente:</label>
+                <input type="text" name="codigo_cliente">
+            </div>
+            <div class="label-item">
+                <label>Nome Cliente:</label>
+                <input type="text" name="nome_cliente">
+            </div>
+            <div class="label-item">
+                <label>Antigo Ponto de Acesso:</label>
+                <input type="text" name="antigo_ponto">
+            </div>
+            <div class="label-item">
+                <label>Porta:</label>
+                <input type="text" name="porta">
+            </div>
+            <div class="label-item">
+                <label>Localização CTO:</label>
+                <input type="text" name="localizacao_cto">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <button class="limpar" onclick="clearFields()">Limpar</button>
+        <button class="copiar" onclick="copyFilledFields()">Copiar</button>
+    </footer>
+
+    <div class="message-area">
+        <div id="message" class="message">Liberação copiada com sucesso ✅️</div>
+    </div>
+    </footer>
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>
